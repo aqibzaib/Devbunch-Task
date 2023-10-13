@@ -4,11 +4,20 @@ import Typography from "@mui/material/Typography";
 import heartIcon from "../../../assets/svg-icons/heart-icon.svg";
 import favoriteHeart from "../../../assets/svg-icons/favorite-heart.svg";
 import vehicleOne from "../../../assets/svg-icons/vehicle-01.svg";
-import { Box, Button } from "@mui/material";
+import { Box, Button, styled } from "@mui/material";
 import gasStation from "../../../assets/svg-icons/gas-station.svg";
 import car from "../../../assets/svg-icons/Car.svg";
 import profileIcon from "../../../assets/svg-icons/profile-2user.svg";
 import { useState } from "react";
+const MyImage = styled("img")(({ theme }) => ({
+  width: "221px", // Default width
+  height: "44px", // Default height
+
+  [theme.breakpoints.only("sm")]: {
+    width: "224px", // Width on 'sm' and larger screens
+    height: "133px", // Height on 'sm' and larger screens
+  },
+}));
 
 export default function CarInfo(props) {
   const {
@@ -104,7 +113,7 @@ export default function CarInfo(props) {
           container
           direction={{ xs: "row", sm: "column" }}
           padding={"0 !important"}
-          xs={1}
+          xs={2}
           sm={12}
           flexWrap={{ xs: "nowrap", sm: "wrap" }}
           alignItems={{ xs: "flex-start" }}
@@ -115,7 +124,20 @@ export default function CarInfo(props) {
             alignSelf={{ xs: "start", sm: "center" }}
             sx={{ margin: "32px 0" }}
           >
-            <img src={vehicleOne} style={{ width: "224px", height: "133px" }} />
+            <MyImage src={vehicleOne} alt="Vehicle One" />
+            {/* <img
+              src={vehicleOne}
+              style={{
+                width: {
+                  xs: "221px",
+                  sm: "224px",
+                },
+                height: {
+                  xs: "44px",
+                  sm: "133px",
+                },
+              }}
+            /> */}
           </Grid>
           {/* 2nd last row start */}
           <Grid
@@ -134,6 +156,8 @@ export default function CarInfo(props) {
               justifyContent={"space-between"}
               flexWrap={{ xs: "nowrap", sm: "wrap" }}
               spacing={-3}
+              justifySelf={"flex-end"}
+              alignSelf={"flex-end"}
               // width={"100%"}
             >
               <Grid
@@ -219,11 +243,14 @@ export default function CarInfo(props) {
             {/* 2nd last row end */}
 
             {/* Last row of div */}
-            {/* <Grid
+            <Grid
               item
               container
-              justifyContent={"space-between"}
+              // justifyContent={"space-between"}
+              justifyContent={{ xs: "flex-start", sm: "space-between" }}
               alignItems={"center"}
+              // xs={12}
+              flexWrap={{ xs: "nowrap", sm: "wrap" }}
             >
               <Box>
                 <span
@@ -266,7 +293,7 @@ export default function CarInfo(props) {
                   Rent Now
                 </Button>
               </Box>
-            </Grid> */}
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
