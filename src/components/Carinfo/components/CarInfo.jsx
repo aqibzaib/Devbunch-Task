@@ -18,6 +18,7 @@ export default function CarInfo(props) {
     transmission,
     passengerCapacity,
     pricePerDay,
+    rentNow,
   } = props;
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -31,7 +32,7 @@ export default function CarInfo(props) {
       sx={{
         p: 1.75,
         // margin: "auto",
-        width: "280px", // Set the width to be the same as the outer Grid
+        width: { xs: "100%", sm: "280px" }, // Set the width to be the same as the outer Grid
         height: 388,
         borderRadius: "10px",
       }}
@@ -40,13 +41,13 @@ export default function CarInfo(props) {
         container
         spacing={5}
         sx={{
-          width: "280px", // Set the width to be the same as the Paper
+          width: { xs: "100%", sm: "280px" }, // Set the width to be the same as the Paper
           height: 388,
           margin: 0,
           padding: 0,
         }}
         // justifyContent={"stretch"}
-        alignContent={"flex-start"}
+
         alignItems={"flex-start"}
       >
         <Grid
@@ -100,22 +101,40 @@ export default function CarInfo(props) {
 
         <Grid
           item
-          xs
           container
-          direction="column"
+          direction={{ xs: "row", sm: "column" }}
           padding={"0 !important"}
-          sx={{ border: "2px solid yellow" }}
+          xs={1}
+          sm={12}
+          flexWrap={{ xs: "nowrap", sm: "wrap" }}
+          alignItems={{ xs: "flex-start" }}
+          // flexGrow={1}
         >
-          <Grid item xs alignSelf={"center"} sx={{ margin: "32px 0" }}>
+          <Grid
+            item
+            alignSelf={{ xs: "start", sm: "center" }}
+            sx={{ margin: "32px 0" }}
+          >
             <img src={vehicleOne} style={{ width: "224px", height: "133px" }} />
           </Grid>
-          <Grid item container spacing={2}>
+          {/* 2nd last row start */}
+          <Grid
+            item
+            container
+            spacing={2}
+            justifyContent={{ xs: "flex-end", sm: "space-between" }}
+          >
             <Grid
               item
               container
-              flexDirection={"row"}
+              xs={1}
+              sm={11}
+              flexDirection={{ xs: "column", sm: "row" }}
+              // flexDirection={"row"}
               justifyContent={"space-between"}
+              flexWrap={{ xs: "nowrap", sm: "wrap" }}
               spacing={-3}
+              // width={"100%"}
             >
               <Grid
                 item
@@ -196,7 +215,11 @@ export default function CarInfo(props) {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid
+
+            {/* 2nd last row end */}
+
+            {/* Last row of div */}
+            {/* <Grid
               item
               container
               justifyContent={"space-between"}
@@ -243,7 +266,7 @@ export default function CarInfo(props) {
                   Rent Now
                 </Button>
               </Box>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
       </Grid>

@@ -21,7 +21,6 @@ export default function CarList() {
             }}
           >
             <Box>
-              {" "}
               <Typography
                 sx={{
                   fontFamily: "Plus Jakarta Sans, sans-serif",
