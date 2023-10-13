@@ -1,7 +1,7 @@
 import React from "react";
 import CarInfo from "./components/CarInfo";
 import { carData } from "../../data.js";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
 export default function CarList() {
   return (
@@ -50,7 +50,7 @@ export default function CarList() {
 
           <Grid
             container
-            spacing={4}
+            spacing={2}
             gap={0}
             // gap={14}
             // flexBasis={1}
@@ -72,6 +72,52 @@ export default function CarList() {
           </Grid>
         </div>
       ))}
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          height: "44px",
+          marginTop: "1.5rem",
+          padding: "0 0.5rem",
+        }}
+      >
+        <Box></Box>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            width: "156px",
+            height: "44px",
+            padding: "0px 20px",
+            borderRadius: "4px",
+            gap: "8px",
+            fontFamily: "Plus Jakarta Sans",
+            fontWeight: 600,
+            fontSize: "16px",
+            lineHeight: "24px",
+            letterSpacing: "-2%",
+            textAlign: "center",
+            textTransform: "capitalize",
+          }}
+        >
+          Show more car
+        </Button>
+        <Typography
+          sx={{
+            fontFamily: "Plus Jakarta Sans",
+            fontWeight: 500,
+            fontSize: "14px",
+            lineHeight: "21px",
+            letterSpacing: "-2%",
+            textAlign: "right",
+            color: "rgba(144, 163, 191, 1)",
+          }}
+        >
+          120 Car
+        </Typography>
+      </Box>
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function CarInfo(props) {
         p: 1.75,
         // margin: "auto",
         width: { xs: "100%", sm: "280px" }, // Set the width to be the same as the outer Grid
-        height: 388,
+        height: 355,
         borderRadius: "10px",
       }}
     >
@@ -50,7 +50,7 @@ export default function CarInfo(props) {
         container
         spacing={5}
         sx={{
-          width: { xs: "100%", sm: "280px" }, // Set the width to be the same as the Paper
+          width: { xs: "100%", sm: "255px" }, // Set the width to be the same as the Paper
           height: 388,
           margin: 0,
           padding: 0,
@@ -121,7 +121,7 @@ export default function CarInfo(props) {
         >
           <Grid
             item
-            alignSelf={{ xs: "start", sm: "center" }}
+            alignSelf={{ xs: "center", sm: "center" }}
             sx={{ margin: "32px 0" }}
           >
             <MyImage src={vehicleOne} alt="Vehicle One" />
@@ -144,7 +144,7 @@ export default function CarInfo(props) {
             item
             container
             spacing={2}
-            justifyContent={{ xs: "flex-end", sm: "space-between" }}
+            justifyContent={{ xs: "flex-start", sm: "space-between" }}
           >
             <Grid
               item
@@ -247,12 +247,13 @@ export default function CarInfo(props) {
               item
               container
               // justifyContent={"space-between"}
-              justifyContent={{ xs: "flex-start", sm: "space-between" }}
+              justifyContent={{ xs: "flex-end", sm: "space-between" }}
               alignItems={"center"}
               // xs={12}
               flexWrap={{ xs: "nowrap", sm: "wrap" }}
+              spacing={{ xs: 8, sm: 0 }}
             >
-              <Box>
+              <Grid item>
                 <span
                   style={{
                     cursor: "pointer",
@@ -277,8 +278,8 @@ export default function CarInfo(props) {
                 >
                   day
                 </span>
-              </Box>
-              <Box>
+              </Grid>
+              <Grid item>
                 <Button
                   variant="contained"
                   color="primary"
@@ -292,7 +293,7 @@ export default function CarInfo(props) {
                 >
                   Rent Now
                 </Button>
-              </Box>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
