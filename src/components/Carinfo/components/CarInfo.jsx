@@ -125,19 +125,6 @@ export default function CarInfo(props) {
             sx={{ margin: "32px 0" }}
           >
             <MyImage src={vehicleOne} alt="Vehicle One" />
-            {/* <img
-              src={vehicleOne}
-              style={{
-                width: {
-                  xs: "221px",
-                  sm: "224px",
-                },
-                height: {
-                  xs: "44px",
-                  sm: "133px",
-                },
-              }}
-            /> */}
           </Grid>
           {/* 2nd last row start */}
           <Grid
@@ -155,6 +142,7 @@ export default function CarInfo(props) {
               // flexDirection={"row"}
               justifyContent={"space-between"}
               flexWrap={{ xs: "nowrap", sm: "wrap" }}
+              gap={1}
               spacing={-3}
               justifySelf={"flex-end"}
               alignSelf={"flex-end"}
@@ -252,6 +240,10 @@ export default function CarInfo(props) {
               // xs={12}
               flexWrap={{ xs: "nowrap", sm: "wrap" }}
               spacing={{ xs: 8, sm: 0 }}
+              paddingTop={{
+                sm: "0px !important",
+                md: "16px !important",
+              }}
             >
               <Grid item>
                 <span

@@ -1,6 +1,7 @@
 import "./App.css";
 // import Index from "./components/Carinfo";
 import CarList from "./components/Carinfo/CarList";
+import Community from "./components/Footer/components/community";
 import LocationTimeDate from "./components/LocationDateTimePicker/LocationTimeDate";
 import Navbar from "./components/Navbar/Navbar";
 import RentalInfo from "./components/carRentalBooking/RentalInfo";
@@ -24,6 +25,7 @@ function App() {
             {/* <Index /> */}
             <CarList />
           </div>
+          <Community />
           {/* <PopularCar /> */}
         </div>
       </Box>
