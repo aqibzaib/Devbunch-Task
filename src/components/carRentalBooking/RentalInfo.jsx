@@ -77,8 +77,12 @@ export default function RentalInfo() {
         Rental Car
       </Button>
 
-      <Grid item alignSelf={"center"}>
-        <img src={vehicleOne} />
+      <Grid
+        item
+        alignSelf={{ xs: "start", md: "center" }}
+        sx={{ sm: { width: "10%" } }}
+      >
+        <img src={vehicleOne} style={{ width: "100%" }} />
       </Grid>
     </Grid>
   );

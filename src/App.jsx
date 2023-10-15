@@ -2,7 +2,6 @@ import "./App.css";
 // import Index from "./components/Carinfo";
 import CarList from "./components/Carinfo/CarList";
 import Community from "./components/Footer/components/community";
-import LocationTimeDate from "./components/LocationDateTimePicker/LocationTimeDate";
 import Navbar from "./components/Navbar/Navbar";
 import RentalInfo from "./components/carRentalBooking/RentalInfo";
 import RentalInfo1 from "./components/carRentalBooking/RentalInfo1";
@@ -18,11 +17,13 @@ function App() {
         <div style={{ marginTop: "7.75rem", padding: "0 24px" }}>
           <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
             <RentalInfo />
+
             <RentalInfo1 />
           </div>
-          <div>{/* <LocationTimeDate /> */}</div>
+          <div>r</div>
           <div style={{ padding: "0 0 24px 0" }}>
             {/* <Index /> */}
+
             <CarList />
           </div>
           <Community />

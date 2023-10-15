@@ -78,7 +78,7 @@ const Community = () => {
             sm={6}
             md={4}
             flexDirection={"column"}
-            alignContent={"center"}
+            alignContent={{ xs: "flex-start", md: "center" }}
           >
             <Typography sx={textStyle}>About</Typography>
 
@@ -128,7 +128,7 @@ const Community = () => {
             sm={5}
             md={4}
             flexDirection={"column"}
-            alignContent={"center"}
+            alignContent={{ xs: "flex-start", md: "center" }}
             // alignContent={{ sm: "flex-start", md: "center" }}
           >
             <Typography sx={textStyle}>Social</Typography>
@@ -146,20 +146,13 @@ const Community = () => {
             </Link>
           </Grid>
         </Grid>
-
-        {/* 
-      <Box display="flex" flexDirection="column">
-        <Typography variant="h6">
-          © 2023 Shuffle. All rights reserved.
-        </Typography>
-      </Box> 
-      */}
       </Grid>
 
       <Grid
         container
         flexDirection={{ xs: "reverse", md: "row" }}
         justifyContent={{ xs: "space-between", md: "none" }}
+        gap={1}
         sx={{ padding: "1rem 0 0 0" }}
       >
         <Grid xs={4} md={8} sx={linkStyle}>

@@ -8,6 +8,7 @@ export default function RentalInfo1() {
   return (
     <Grid
       container
+      display={{ xs: "none", md: "flex" }}
       direction={"column"}
       alignItems={"flex-start"}
       width={"640px"}

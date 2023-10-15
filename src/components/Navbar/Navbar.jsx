@@ -11,7 +11,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 
 import SettingsIcon from "@mui/icons-material/Settings";
 import SearchBar from "./components/searchBar";
-import { Badge } from "@mui/material";
+import { Badge, Hidden } from "@mui/material";
 import heartIcon from "../../assets/svg-icons/heart-icon.svg";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import avatarImage from "../../assets/svg-icons/avatar-image.png";
@@ -32,22 +32,24 @@ function Navbar() {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+        <Toolbar
+          disableGutters
+          sx={{
+            display: { xs: "flex" },
+            flexWrap: { xs: "wrap" },
+            gap: { xs: 2 },
+          }}
+        >
           <Box flexGrow={0.1}>
-            {" "}
             <Typography
-              // variant="h6"
               noWrap
-              // component="a"
-              href=""
               sx={{
                 mr: 2,
                 display: {
-                  //  xs: "none",
                   xs: "flex",
                   md: "flex",
                 },
+
                 fontFamily: "Plus Jakarta Sans",
                 fontWeight: 700,
                 fontSize: "2rem",
@@ -60,105 +62,94 @@ function Navbar() {
             </Typography>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            {/* <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              Responsive Mode
-              <MenuIcon />
-            </IconButton> */}
-          </Box>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <SearchBar />
+          <Box sx={{ flexGrow: 1, display: { sm: "flex" } }}>
+            <Hidden smDown>
+              <SearchBar />
+            </Hidden>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {/* <Avatar>
-              <FolderIcon />
-            </Avatar> */}
-            {/* <Tooltip> */}
-            <IconButton
-              // onClick={handleOpenUserMenu}
-              sx={{ p: 1 }}
-            >
-              <Avatar
-                sx={{
-                  width: "44px",
-                  height: "44px",
-                  // borderColor: "#C3D4E966",
-                  border: "1px solid  #C3D4E966",
-                  backgroundColor: "inherit",
-                }}
+            <Hidden mdDown>
+              <IconButton
+                // onClick={handleOpenUserMenu}
+                sx={{ p: 1 }}
               >
-                {/* <FavoriteIcon color="action" disabled /> */}
-                {/* <SvgIcon src={{ heartIcon }} /> */}
-                <img
-                  src={heartIcon}
-                  style={
-                    {
-                      // width: "24px",
-                      // height: "24px",
-                    }
-                  }
-                />
-              </Avatar>
-            </IconButton>
-            <IconButton
-              // onClick={handleOpenUserMenu}
-              sx={{ p: 0 }}
-            >
-              <Avatar
-                sx={{
-                  border: "1px solid  #C3D4E966",
-                  backgroundColor: "inherit",
-                  position: "relative",
-                  width: "44px",
-                  height: "44px",
-                }}
-              >
-                <Badge
-                  color="warning"
-                  variant="dot"
-                  // sx={{ position: "absolute", top: "0px", right: "3px" }}
+                <Avatar
+                  sx={{
+                    width: "44px",
+                    height: "44px",
+                    // borderColor: "#C3D4E966",
+                    border: "1px solid  #C3D4E966",
+                    backgroundColor: "inherit",
+                  }}
                 >
-                  <NotificationsIcon sx={{ color: "#596780" }} />
-                </Badge>
-              </Avatar>
-            </IconButton>
+                  {/* <FavoriteIcon color="action" disabled /> */}
+                  {/* <SvgIcon src={{ heartIcon }} /> */}
+                  <img
+                    src={heartIcon}
+                    style={
+                      {
+                        // width: "24px",
+                        // height: "24px",
+                      }
+                    }
+                  />
+                </Avatar>
+              </IconButton>
+            </Hidden>
+
+            <Hidden mdDown>
+              <IconButton
+                // onClick={handleOpenUserMenu}
+                sx={{ p: 0 }}
+              >
+                <Avatar
+                  sx={{
+                    border: "1px solid  #C3D4E966",
+                    backgroundColor: "inherit",
+                    position: "relative",
+                    width: "44px",
+                    height: "44px",
+                  }}
+                >
+                  <Badge
+                    color="warning"
+                    variant="dot"
+                    // sx={{ position: "absolute", top: "0px", right: "3px" }}
+                  >
+                    <NotificationsIcon sx={{ color: "#596780" }} />
+                  </Badge>
+                </Avatar>
+              </IconButton>
+            </Hidden>
             {/* SettingsIcon */}
 
-            <IconButton
-              // onClick={handleOpenUserMenu}
-              sx={{ p: 1 }}
-            >
-              <Avatar
-                sx={{
-                  border: "1px solid  #C3D4E966",
-                  backgroundColor: "inherit",
-                  width: "44px",
-                  height: "44px",
-                }}
-              >
-                <SettingsIcon sx={{ color: "#596780" }} />
-              </Avatar>
-            </IconButton>
-            <IconButton
-              // onClick={handleOpenUserMenu }
-              sx={{ p: 1 }}
-            >
+            <Hidden mdDown>
+              <IconButton sx={{ p: 1 }}>
+                <Avatar
+                  sx={{
+                    border: "1px solid  #C3D4E966",
+                    backgroundColor: "inherit",
+                    width: "44px",
+                    height: "44px",
+                  }}
+                >
+                  <SettingsIcon sx={{ color: "#596780" }} />
+                </Avatar>
+              </IconButton>
+            </Hidden>
+            <IconButton sx={{ p: 1 }}>
               <Avatar
                 alt="Remy Sharp"
                 src={avatarImage}
                 sx={{ width: "44px", height: "44px" }}
               />
             </IconButton>
-            {/* </Tooltip> */}
+          </Box>
+          <Box display={"flex"}>
+            <Hidden smUp>
+              <SearchBar />
+            </Hidden>
           </Box>
         </Toolbar>
       </Container>
